@@ -1,13 +1,13 @@
 # jquery.toChecklist
 
-An extension of http://www.scotthorlbeck.com/code/tochecklist/ with:
+An extension of http://www.scotthorlbeck.com/code/tochecklist/
 
-* buttons to show/hide checked/unchecked items
+* Tuned for Ruby on Rails - inserts hidden input field with select element's name attribute for submitting empty list.
+* Buttons are built in:
+** Hide/Show checked/unchecked buttons filter the list.
+** 'All' and 'None' buttons apply to only the filtered items.
+** 'Undo' resets to original settings.
+* Uses jquery.clearableTextField (included) for the search box.
+* Replaces iOS mobile Safari's native multi-select element.
 
-* 'All' button to select all visible items
-
-* 'None' button to deselect all visible items
-
-Also overrides iOS mobile Safari native multi-select box.
-
-[See Examples](http://tlatim.github.com/jquery.toChecklist/index.html)
+[See Example](http://tlatim.github.com/jquery.toChecklist/index.html)
