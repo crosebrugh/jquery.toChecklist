@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Jquery.tochecklist by tlatim</title>
+    <title>tlatim jquery.toChecklist</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -11,56 +11,97 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <!-- Required jQuery -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="public/stylesheets/jquery.toChecklist.css" type="text/css" media="all">
+    <link rel="stylesheet" href="public/stylesheets/jquery.clearableTextField.css" type="text/css" media="all">
+    <script src="public/javascripts/jquery.cookie.js"></script>
+    <script src="public/javascripts/jquery.clearableTextField.js"></script>
+    <script src="public/javascripts/jquery.toChecklist.js"></script>
+   
+    <script type="text/javascript">
+      $(window).load(function() {
+        $('select.comboselect').each(function(idx,el) {
+          var deep=$(el).find('option').length > 16;
+
+          $(el).css({height: (deep ? 32 : 16) + 'em'});
+          $(el).toChecklist({ preferIdOverName: true, addSearchBox: deep });
+        });
+      });
+    </script>
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Jquery.tochecklist</h1>
-        <p>An extension of http://www.scotthorlbeck.com/code/tochecklist/ with show/hide checked buttons </p>
 
-        <p class="view"><a href="https://github.com/tlatim/jquery.toChecklist">View the Project on GitHub <small>tlatim/jquery.toChecklist</small></a></p>
+    <h1>jquery.toChecklist Examples</h1>
+    <p class="view"><a href="https://github.com/tlatim/jquery.toChecklist">View tlatim/jquery.toChecklist on GitHub</a></p>
 
+    <h3>Native Multi-Select</h3>
+    <form>
+      <select class="not_comboselect" multiple="multiple" name="names[]" size="5">
+        <option value="1">Alex</option>
+        <option value="2">Beth</option>
+        <option value="3">Claire</option>
+        <option value="4">Crystal</option>
+        <option value="5">Dolores</option>
+        <option value="6">Dwight</option>
+        <option value="7">Eric</option>
+        <option value="8">Francis</option>
+        <option value="9">Franklin</option>
+        <option value="10">Hazel</option>
+        <option value="11">Jean</option>
+        <option value="12">Jerome</option>
+        <option value="13">Julia</option>
+        <option value="14">Kristine</option>
+        <option value="15">Malcolm</option>
+        <option value="16">Marcia</option>
+        <option value="17">Marion</option>
+        <option value="18">Neal</option>
+        <option value="19">Sandy</option>
+        <option value="20">Wesley</option>
+      </select>
+    </form>
 
-        <ul>
-          <li><a href="https://github.com/tlatim/jquery.toChecklist/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/tlatim/jquery.toChecklist/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/tlatim/jquery.toChecklist">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>Welcome to GitHub Pages.</h3>
+    <br/><br/>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/tlatim">tlatim</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+    <h3>jquery.toChecklist Multi-Select</h3>
+    <div id="to-checklist">
+    <form>
+      <input name="names[]" type="hidden" value=""/>
+      <select class="comboselect" multiple="multiple" name="names[]" size="5">
+        <option value="1">Alex</option>
+        <option value="2">Beth</option>
+        <option value="3">Claire</option>
+        <option value="4">Crystal</option>
+        <option value="5">Dolores</option>
+        <option value="6">Dwight</option>
+        <option value="7">Eric</option>
+        <option value="8">Francis</option>
+        <option value="9">Franklin</option>
+        <option value="10">Hazel</option>
+        <option value="11">Jean</option>
+        <option value="12">Jerome</option>
+        <option value="13">Julia</option>
+        <option value="14">Kristine</option>
+        <option value="15">Malcolm</option>
+        <option value="16">Marcia</option>
+        <option value="17">Marion</option>
+        <option value="18">Neal</option>
+        <option value="19">Sandy</option>
+        <option value="20">Wesley</option>
+      </select>
+    </form>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+    <div id="notes">
+     <p>Note how the 'All' and 'None' buttons apply to only what is shown.</p>
+     <p>Useful for managing long lists that are filtered by the text search or masked by the Show/Hide checked/unchecked buttons.</p>
+    </div>
+    <div id="clear">
+    </div>
+    <hr/>
+    <p>Maintained by <a href="https://github.com/tlatim">tlatim</a></p>
   </body>
 </html>

@@ -82,6 +82,10 @@ th, td {
   border-bottom:1px solid #e5e5e5;
 }
 
+td {
+  border-bottom: 0px;
+}
+
 dt {
   color:#444;
   font-weight:700;
@@ -173,7 +177,7 @@ hr {
   border:0;
   background:#e5e5e5;
   height:1px;
-  margin:0 0 20px;
+  margin:1em 0 20px 1em;
 }
 
 footer {
@@ -252,4 +256,18 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+
+div#to-checklist {
+    float: left;
+    width: 250px;
+}
+
+div#notes {
+    float: left;
+    width: 50%;
+}
+
+div#clear {
+    clear: both;
 }

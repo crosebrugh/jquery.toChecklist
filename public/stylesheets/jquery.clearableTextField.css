@@ -1,0 +1,10 @@
+div.text_clear_button {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAABR0lEQVQYlZWQsU7CYBSFz/1LQ0mToomJU1kMGwkENycnFow6yFIWpu46GX0JH4FBB0xMJGURB3gCEgMvUBdaTAmQyNLY40IJcfMmdzn3G879gH+MAIDrunmSD3EcX7fb7RUAAuDfXAEAyVcRaem6PqzVagcAdMdx9kkORaSVyWS6AHQFAEmS3JBciEi5UCi81+v1I9M0ByJSIbmYz+d3AHTZ1NEcxzk2TfNNRPbSjiSXQRBceJ43ARBraffxePxVLBZHhmE0UzgMw6bneR8Akl0YjUbDsizrUUQO0yyXy5XW63U3iqLvLey6bt4wjIFSqkxyuVqtbrPZ7IlSyrZt+xTASxAE610bFZKL6XR62el0nn3fvyK51DStVK1WnwCoXRt+FEVnvV5vAiDu9/ujMAzPSX7OZrN7AGprA4C+WbV5KNm5CYCfXz6nnZ+bD3VFAAAAAElFTkSuQmCC);
+    width: 11px;
+    height: 11px;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    position: absolute;
+    cursor: pointer;
+}
