@@ -41,7 +41,7 @@
 
     <h3>Native Multi-Select</h3>
     <form>
-      <select class="not_comboselect" multiple="multiple" name="names[]" size="5">
+      <select multiple="multiple" name="names[]" size="5">
         <option value="1">Alex</option>
         <option value="2">Beth</option>
         <option value="3">Claire</option>
@@ -70,7 +70,6 @@
     <h3>jquery.toChecklist Multi-Select</h3>
     <div id="to-checklist">
     <form>
-      <input name="names[]" type="hidden" value=""/>
       <select class="comboselect" multiple="multiple" name="names[]" size="5">
         <option value="1">Alex</option>
         <option value="2">Beth</option>
@@ -96,8 +95,24 @@
     </form>
     </div>
     <div id="notes">
-     <p>Note how the 'All' and 'None' buttons apply to only what is shown.</p>
-     <p>Useful for managing long lists that are filtered by the text search or masked by the Show/Hide checked/unchecked buttons.</p>
+     <p>Usage:</p>
+       <pre><code>
+$(window).load(function() {
+  $('select.comboselect').each(function(idx,el) {
+    var deep=$(el).find('option').length > 16;
+
+    $(el).css({height: (deep ? 32 : 16) + 'em'});
+    $(el).toChecklist({ addSearchBox: deep });
+  });
+});
+     </pre></code>
+     <p>Tuned for Ruby on Rails - inserts hidden input field with select element's name attribute for submitting empty list.</p>
+     <p>Buttons are built in:
+     <p style="padding-left:2em">Hide/Show checked/unchecked buttons filter the list.</p>
+     <p style="padding-left:2em">'All' and 'None' buttons apply to only the filtered items.</p>
+     <p style="padding-left:2em">'Undo' resets to original settings.</p>
+     <p>Uses jquery.clearableTextField (included) for the search box.</p>
+     <p>Replaces iOS mobile Safari's native multi-select element.</p>
     </div>
     <div id="clear">
     </div>
