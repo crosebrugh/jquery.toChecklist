@@ -181,20 +181,21 @@
       $("td:has('#"+jSelectElemId+"')").css('width',width);
 
       var checklistDivId='#'+checklistId;
-      var busy=$('#' + checklistTableId).busy || function (f) { f(); };
+      var table=$('#' + checklistTableId);
+      var busy=table.busy || function (f) { f(); };
 
-      $('input[type="button"]','#'+checklistTableId).click(function(e) {
+      $('input[type="button"]',table).click(function(e) {
         var action=$(this).data('action');
 
-        busy(function() {
+        busy.call(table,function() {
           updateChecklist(action,checklistDivId);
         });
       });
 
-      $('.showhide','#'+checklistTableId).click(function(e) {
+      $('.showhide',table).click(function(e) {
         var action=$(this).data('action');
 
-        busy(function() {
+        busy.call(table,function() {
           updateChecklist(action,checklistDivId);
         });
       });
